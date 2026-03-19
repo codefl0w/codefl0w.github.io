@@ -4,3 +4,8 @@ url: "https://codefl0w.xyz"
 baseurl: ""
 author: "fl0w"
 image: "/assets/img/site/favicon.ico"
+exclude:
+  - docs
+  - node_modules
+  - .docusaurus
+  - build

@@ -1,0 +1,16 @@
+{
+  "name": "codefl0w-site-docs",
+  "private": true,
+  "scripts": {
+    "start": "docusaurus start",
+    "build": "docusaurus build",
+    "serve": "docusaurus serve",
+    "clear": "docusaurus clear"
+  },
+  "dependencies": {
+    "@docusaurus/core": "^3.0.0",
+    "@docusaurus/preset-classic": "^3.0.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
+  }
+}
