@@ -42,11 +42,6 @@ const config = {
           position: "left"
         },
         {
-          href: "https://codefl0w.xyz/archive/docs",
-          label: "Archive Docs",
-          position: "left"
-        },
-        {
           href: "https://github.com/codefl0w",
           label: "GitHub",
           position: "right"
