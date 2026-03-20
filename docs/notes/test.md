@@ -1,7 +1,7 @@
 ---
-sidebar_position: 1
 title: Test
-slug: /test
+sidebar_position: 1
+slug: /notes/test
 ---
 
 # Test

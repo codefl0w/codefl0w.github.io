@@ -1,0 +1,9 @@
+{
+  "label": "Tools",
+  "position": 2,
+  "link": {
+    "type": "generated-index",
+    "title": "Tools Docs",
+    "description": "Documentation for utilities, scripts, and web tools."
+  }
+}

@@ -16,23 +16,12 @@ const config = {
     defaultLocale: "en",
     locales: ["en"]
   },
-  presets: [
-    [
-      "classic",
-      {
-        docs: {
-          path: "docs",
-          routeBasePath: "/",
-          sidebarPath: require.resolve("./sidebars.js")
-        },
-        blog: false,
-        theme: {
-          customCss: require.resolve("./src/css/custom.css")
-        }
-      }
-    ]
-  ],
   themeConfig: {
+    colorMode: {
+      defaultMode: "dark",
+      disableSwitch: false,
+      respectPrefersColorScheme: true
+    },
     navbar: {
       title: "fl0w Docs",
       items: [
@@ -72,7 +61,23 @@ const config = {
       ],
       copyright: `Copyright ${new Date().getFullYear()} fl0w`
     }
-  }
+  },
+  presets: [
+    [
+      "classic",
+      {
+        docs: {
+          path: "docs",
+          routeBasePath: "/",
+          sidebarPath: require.resolve("./sidebars.js")
+        },
+        blog: false,
+        theme: {
+          customCss: require.resolve("./src/css/custom.css")
+        }
+      }
+    ]
+  ]
 };
 
 module.exports = config;
