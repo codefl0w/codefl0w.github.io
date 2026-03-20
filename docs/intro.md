@@ -1,8 +1,3 @@
----
-sidebar_position: 1
-title: Intro
-slug: /
----
 
 # fl0w Docs
 
