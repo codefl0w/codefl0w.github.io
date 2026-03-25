@@ -309,6 +309,43 @@ main > #readme {
   font-style: normal;
 }
 
+.contact-grid {
+  margin-top: 1.25rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.contact-card {
+  display: block;
+  padding: 1rem 1.1rem;
+  border-radius: 12px;
+  background: rgba(27, 34, 58, 0.75);
+  border: 1px solid #222f4b;
+  box-shadow: 0 2px 6px #404f7a;
+  text-decoration: none;
+  color: #e0e0e0;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.contact-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px #404f7a;
+  border-color: #ff8ff5;
+  text-decoration: none;
+}
+
+.contact-card h2 {
+  margin: 0 0 0.35rem;
+  font-size: 1.05rem;
+  color: #ff8ff5;
+}
+
+.contact-card p {
+  margin: 0;
+  color: #a0a0a0;
+}
+
 
 /* === FOOTER === */
 .site-footer {
