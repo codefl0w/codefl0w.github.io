@@ -1,70 +1,609 @@
 ---
 layout: default
 title: QuickADB
+description: "QuickADB is a polished open-source GUI for ADB and Fastboot with one-click workflows, advanced Android tooling, and cross-platform support."
 ---
 
-<main class="tool-container">
-    <p><strong>QuickADB</strong> is a Python based GUI for ADB & Fastboot commands. Below is its live project
-        description, fetched from GitHub:</p>
+<style>
+  .quickadb-page {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 2.5rem;
+  }
 
-    <!-- Toggle Button -->
-    <div id="readme-toggle" onclick="toggleReadme()"
-        style="cursor: pointer; display: flex; align-items: center; gap: 0.4rem; padding: 0 1.5rem;">
-        <span id="readme-arrow" style="transition: transform 0.2s;">▶</span>
-        <strong style="user-select: none;">Show README</strong>
+  .quickadb-hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) minmax(320px, 0.8fr);
+    gap: 1.5rem;
+    align-items: stretch;
+    margin-bottom: 1.75rem;
+  }
+
+  .quickadb-panel {
+    background: linear-gradient(180deg, rgba(27, 34, 58, 0.96), rgba(21, 28, 44, 0.98));
+    border: 1px solid #222f4b;
+    border-radius: 18px;
+    box-shadow: 0 14px 40px rgba(0, 0, 0, 0.28);
+  }
+
+  .quickadb-hero-copy {
+    padding: 1.7rem;
+  }
+
+  .quickadb-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    padding: 0.4rem 0.9rem;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 143, 245, 0.35);
+    background: rgba(255, 143, 245, 0.1);
+    color: #ff8ff5;
+    font-size: 0.88rem;
+    margin-bottom: 0.9rem;
+  }
+
+  .quickadb-page h2.quickadb-headline {
+    margin: 0;
+    padding: 0;
+    font-size: clamp(2rem, 4vw, 3.35rem);
+    line-height: 1.04;
+    color: #ffffff;
+  }
+
+  .quickadb-subheadline {
+    margin: 1rem 0 0;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: #cdd5e3;
+    max-width: 58ch;
+  }
+
+  .quickadb-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 1.2rem;
+  }
+
+  .quickadb-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    min-height: 44px;
+    padding: 0.75rem 1.05rem;
+    border-radius: 12px;
+    border: 1px solid #404f7a;
+    background: #192036;
+    color: #e0e0e0;
+    text-decoration: none;
+    font-weight: 700;
+    transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+  }
+
+  .quickadb-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2);
+    border-color: #ff8ff5;
+    text-decoration: none;
+  }
+
+  .quickadb-btn-primary {
+    background: linear-gradient(135deg, rgba(64, 153, 255, 0.92), rgba(255, 143, 245, 0.78));
+    border-color: rgba(255, 143, 245, 0.55);
+    color: #ffffff;
+  }
+
+  .quickadb-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-top: 1.1rem;
+  }
+
+  .quickadb-chip {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.45rem 0.75rem;
+    border-radius: 999px;
+    background: rgba(64, 153, 255, 0.12);
+    border: 1px solid rgba(64, 153, 255, 0.24);
+    color: #dce8ff;
+    font-size: 0.88rem;
+  }
+
+  .quickadb-showcase {
+    padding: 1.1rem;
+    display: grid;
+    gap: 0.95rem;
+  }
+
+  .quickadb-window {
+    background: #111827;
+    border: 1px solid #2f3b5e;
+    border-radius: 16px;
+    overflow: hidden;
+  }
+
+  .quickadb-window-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.7rem 0.9rem;
+    border-bottom: 1px solid #2f3b5e;
+    background: rgba(27, 34, 58, 0.88);
+    color: #a0a0a0;
+    font-size: 0.82rem;
+  }
+
+  .quickadb-dots {
+    display: flex;
+    gap: 0.35rem;
+  }
+
+  .quickadb-dots span {
+    width: 10px;
+    height: 10px;
+    border-radius: 999px;
+    background: #404f7a;
+  }
+
+  .quickadb-dots span:nth-child(1) { background: #ff8ff5; }
+  .quickadb-dots span:nth-child(2) { background: #4099ff; }
+  .quickadb-dots span:nth-child(3) { background: #61d19d; }
+
+  .quickadb-window-body {
+    padding: 0.95rem;
+  }
+
+  .quickadb-command {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 0.8rem 0.9rem;
+    border-radius: 12px;
+    background: rgba(64, 79, 122, 0.18);
+    border: 1px solid rgba(64, 79, 122, 0.38);
+    color: #e0e0e0;
+    margin-bottom: 0.65rem;
+  }
+
+  .quickadb-command:last-child {
+    margin-bottom: 0;
+  }
+
+  .quickadb-command span {
+    color: #a0a0a0;
+    font-size: 0.88rem;
+  }
+
+  .quickadb-checklist {
+    display: grid;
+    gap: 0.65rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .quickadb-checklist li {
+    display: flex;
+    gap: 0.7rem;
+    align-items: flex-start;
+    color: #d9deea;
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+
+  .quickadb-checklist li::before {
+    content: "\2713";
+    color: #61d19d;
+    font-weight: 800;
+    margin-top: 0.05rem;
+  }
+
+  .quickadb-section {
+    margin-top: 1.7rem;
+  }
+
+  .quickadb-section-title {
+    margin: 0 0 0.85rem;
+    font-size: 1.2rem;
+    color: #ff8ff5;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+
+  .quickadb-section-title::after {
+    content: "";
+    flex: 1 1 auto;
+    height: 1px;
+    background: linear-gradient(90deg, rgba(255, 143, 245, 0.6), transparent);
+    opacity: 0.6;
+  }
+
+  .quickadb-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 1rem;
+  }
+
+  .quickadb-card {
+    padding: 1rem 1.05rem;
+    border-radius: 16px;
+    background: rgba(27, 34, 58, 0.72);
+    border: 1px solid #222f4b;
+    box-shadow: 0 2px 6px #404f7a;
+  }
+
+  .quickadb-card h3 {
+    margin: 0 0 0.45rem;
+    color: #ffffff;
+    font-size: 1rem;
+  }
+
+  .quickadb-card p,
+  .quickadb-card ul {
+    margin: 0;
+    color: #b7c0d2;
+    line-height: 1.65;
+  }
+
+  .quickadb-card ul {
+    padding-left: 1rem;
+  }
+
+  .quickadb-highlight {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1rem;
+  }
+
+  .quickadb-highlight-card {
+    padding: 1.15rem;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 143, 245, 0.2);
+    background: linear-gradient(180deg, rgba(27, 34, 58, 0.86), rgba(21, 28, 44, 0.92));
+    box-shadow: 0 2px 6px #404f7a;
+  }
+
+  .quickadb-highlight-card strong {
+    display: block;
+    margin-bottom: 0.45rem;
+    color: #ffffff;
+    font-size: 1rem;
+  }
+
+  .quickadb-highlight-card p {
+    margin: 0;
+    color: #b7c0d2;
+    line-height: 1.65;
+  }
+
+  .quickadb-open-source {
+    margin-top: 1.75rem;
+    padding: 1.2rem 1.25rem;
+    border-radius: 18px;
+    background: linear-gradient(135deg, rgba(255, 143, 245, 0.13), rgba(64, 153, 255, 0.12));
+    border: 1px solid rgba(255, 143, 245, 0.22);
+  }
+
+  .quickadb-open-source p {
+    margin: 0.45rem 0 0;
+    color: #d2d8e4;
+    line-height: 1.7;
+  }
+
+  .quickadb-readme {
+    margin-top: 1.75rem;
+    border: 1px solid #222f4b;
+    border-radius: 16px;
+    overflow: hidden;
+    background: rgba(27, 34, 58, 0.7);
+  }
+
+  .quickadb-readme-toggle {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1rem 1.15rem;
+    background: transparent;
+    color: #e0e0e0;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+  }
+
+  .quickadb-readme-toggle:hover {
+    background: rgba(64, 79, 122, 0.18);
+  }
+
+  .quickadb-readme-toggle strong {
+    color: #ffffff;
+    font-size: 0.98rem;
+  }
+
+  .quickadb-readme-toggle span {
+    color: #a0a0a0;
+    font-size: 0.9rem;
+  }
+
+  .quickadb-arrow {
+    transition: transform 0.2s ease;
+    color: #ff8ff5;
+    font-size: 1rem;
+    flex: 0 0 auto;
+  }
+
+  .quickadb-readme-body {
+    display: none;
+    padding: 0 1.15rem 1.15rem;
+  }
+
+  .quickadb-readme-body #readme {
+    padding: 0;
+  }
+
+  .quickadb-readme-body #readme img {
+    max-width: 100%;
+    border-radius: 12px;
+  }
+
+  .quickadb-readme-body #readme pre {
+    overflow-x: auto;
+    background: #111827;
+    border: 1px solid #2f3b5e;
+    border-radius: 12px;
+    padding: 0.9rem;
+  }
+
+  @media (max-width: 920px) {
+    .quickadb-hero {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .quickadb-page {
+      padding: 1.35rem 1rem 2rem;
+    }
+
+    .quickadb-hero-copy,
+    .quickadb-showcase {
+      padding: 1rem;
+    }
+  }
+</style>
+
+<section class="quickadb-page">
+  <section class="quickadb-hero">
+    <div class="quickadb-panel quickadb-hero-copy">
+      <div class="quickadb-badge">Open-source GUI for ADB and Fastboot</div>
+      <h2 class="quickadb-headline">The only Android toolkit you'll need.</h2>
+      <p class="quickadb-subheadline">
+        QuickADB turns repetitive command-line work into clean one-click workflows without dumbing anything down.
+      </p>
+
+      <p class="quickadb-subheadline">
+        With its fully portable nature and ever-updated feature set, QuickADB is designed to be the ultimate device management suite.
+      </p>
+
+      <div class="quickadb-actions">
+        <a class="quickadb-btn quickadb-btn-primary" href="https://github.com/codefl0w/QuickADB/releases" target="_blank" rel="noopener">Download Latest Release</a>
+        <a class="quickadb-btn" href="https://github.com/codefl0w/QuickADB" target="_blank" rel="noopener">Browse Source Code</a>
+      </div>
+
+      <div class="quickadb-meta">
+        <span class="quickadb-chip">One-click ADB + Fastboot</span>
+        <span class="quickadb-chip">Wireless pairing</span>
+        <span class="quickadb-chip">App + file management</span>
+        <span class="quickadb-chip">GSI and partition tooling</span>
+        <span class="quickadb-chip">Root access management</span>
+        <span class="quickadb-chip">Cross-platform support</span>
+        <span class="quickadb-chip">Fully automated workflows</span>
+        <span class="quickadb-chip">GPL-3.0 open source</span>
+      </div>
     </div>
 
-    <!-- Collapsible README -->
-    <section id="readme-wrapper" style="display: none;">
-        <div id="readme" style="padding: 0 1.5rem;">Loading README.md...</div>
-    </section>
-</main>
+    <div class="quickadb-panel quickadb-showcase">
+      <div class="quickadb-window">
+        <div class="quickadb-window-bar">
+          <div class="quickadb-dots"><span></span><span></span><span></span></div>
+          <div>QuickADB workflow preview</div>
+        </div>
+        <div class="quickadb-window-body">
+          <div class="quickadb-command">
+            <div>
+              <strong>Wireless ADB pairing</strong>
+              <span>Pair your device with your PC wirelessly within seconds</span>
+            </div>
+          </div>
+          <div class="quickadb-command">
+            <div>
+              <strong>Advanced file explorer</strong>
+              <span>Push, pull, edit, create, preview, chmod, and work with root directories</span>
+            </div>
+          </div>
+          <div class="quickadb-command">
+            <div>
+              <strong>Tinkerer tools</strong>
+              <span>Flash images, inspect partitions, extract payloads and super images</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="quickadb-window">
+        <div class="quickadb-window-bar">
+          <div class="quickadb-dots"><span></span><span></span><span></span></div>
+          <div>Why it stands out</div>
+        </div>
+        <div class="quickadb-window-body">
+          <ul class="quickadb-checklist">
+            <li>Removes command memorization without sacrificing power.</li>
+            <li>Handles almost everything you could need without typing a single command.</li>
+            <li>Stays open-source, inspectable, and buildable from source.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="quickadb-section">
+    <h2 class="quickadb-section-title">What QuickADB gives you</h2>
+    <div class="quickadb-grid">
+      <article class="quickadb-card">
+        <h3>ADB and Fastboot without friction</h3>
+        <p>
+          Reboots, sideloading, wireless pairing, flashing, variable lookup, and the common device actions you reach for constantly are all exposed through a fast GUI instead of repeated shell commands.
+        </p>
+      </article>
+      <article class="quickadb-card">
+        <h3>More than a wrapper</h3>
+        <p>
+          QuickADB goes well beyond a launcher. It includes a custom terminal, device inspection, app management, file browsing, extraction tools, and device-facing workflows that require several separate utilities.
+        </p>
+      </article>
+      <article class="quickadb-card">
+        <h3>Built for real Android work</h3>
+        <p>
+          Automated GSI flashing, partition backups, payload extraction, root-aware operations, boot animation tinkering, and filesystem access make it useful long after the initial &ldquo;easy buttons&rdquo; stage.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <section class="quickadb-section">
+    <h2 class="quickadb-section-title">Why you'll stick with it</h2>
+    <div class="quickadb-highlight">
+      <div class="quickadb-highlight-card">
+        <strong>It saves time immediately</strong>
+        <p>QuickADB does more than simplify common tasks - it introduces powerful workflows to help you manage your Android faster and easier.</p>
+      </div>
+      <div class="quickadb-highlight-card">
+        <strong>It covers all modder groups</strong>
+        <p>Whether you're a beginner looking to debloat or an experienced modder, QuickADB provides the tools and workflows you need. Need a command you cannot find? Just use the custom terminal.</p>
+      </div>
+      <div class="quickadb-highlight-card">
+        <strong>It's feature-rich</strong>
+        <p>App manager, file explorer, custom terminal, partition manager, super image extraction, payload dumping, and boot animation tinkering turns QuickADB from a wrapper into a full management suite.</p>
+      </div>
+      <div class="quickadb-highlight-card">
+        <strong>It respects your pocket and your privacy</strong>
+        <p>QuickADB is, and will always be, open-source and free to use. User control is the number one priority.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="quickadb-section">
+    <h2 class="quickadb-section-title">Feature highlights</h2>
+    <div class="quickadb-grid">
+      <article class="quickadb-card">
+        <h3>Custom terminal</h3>
+        <ul>
+          <li>Autocomplete support</li>
+          <li>Searchable output</li>
+          <li>Export to text</li>
+          <li>Process control and command history</li>
+        </ul>
+      </article>
+      <article class="quickadb-card">
+        <h3>App and file management</h3>
+        <ul>
+          <li>Browse installed apps</li>
+          <li>Backup and restore APKs</li>
+          <li>Manage permissions and debloat presets</li>
+          <li>Push, pull, edit, and preview files</li>
+        </ul>
+      </article>
+      <article class="quickadb-card">
+        <h3>Flashing and extraction tools</h3>
+        <ul>
+          <li>GSI flasher</li>
+          <li>Partition manager</li>
+          <li><code>super.img</code> extraction via <a href="https://github.com/codefl0w/unsuper" target="_blank" rel="noopener">unsuper</a></li>
+          <li><code>payload.bin</code> extraction via <a href="https://github.com/ssut/payload-dumper-go" target="_blank" rel="noopener">payload-dumper-go</a></li>
+        </ul>
+      </article>
+      <article class="quickadb-card">
+        <h3>Cross-platform support</h3>
+        <ul>
+          <li>Windows, Linux and macOS builds</li>
+          <li>Fully portable with all dependencies included</li>
+          <li>Source is almost fully platform-independent and can be adapted for anything</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <section class="quickadb-open-source">
+    <strong>Open-source by design</strong>
+    <p>
+      QuickADB is licensed under GPL-3.0 and developed in the open. You can inspect the source, edit it, build it from source, and contribute to it on GitHub. It will always be free to use and open for contributions.
+    </p>
+  </section>
+
+  <section class="quickadb-readme">
+    <button class="quickadb-readme-toggle" type="button" onclick="toggleQuickAdbReadme()">
+      <div>
+        <strong>Read the full technical README</strong>
+        <span>Expand for installation, source builds, screenshots, and lower-level usage details.</span>
+      </div>
+      <span id="quickadb-readme-arrow" class="quickadb-arrow">&#9654;</span>
+    </button>
+
+    <div id="quickadb-readme-body" class="quickadb-readme-body">
+      <div id="readme">Loading README.md...</div>
+    </div>
+  </section>
+</section>
 
 <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 <script>
-    // Fetch the README once
-    let readmeLoaded = false;
-    function toggleReadme() {
-        const wrapper = document.getElementById("readme-wrapper");
-        const arrow = document.getElementById("readme-arrow");
-        const label = document.querySelector("#readme-toggle strong");
+  let quickAdbReadmeLoaded = false;
 
-        const isHidden = wrapper.style.display === "none";
-        wrapper.style.display = isHidden ? "block" : "none";
-        arrow.style.transform = isHidden ? "rotate(90deg)" : "rotate(0deg)";
-        label.textContent = isHidden ? "Hide README" : "Show README";
+  function toggleQuickAdbReadme() {
+    const wrapper = document.getElementById("quickadb-readme-body");
+    const arrow = document.getElementById("quickadb-readme-arrow");
+    const isHidden = wrapper.style.display === "" || wrapper.style.display === "none";
 
-        if (!readmeLoaded && isHidden) {
-            fetch("https://raw.githubusercontent.com/codefl0w/QuickADB/main/README.md")
-                .then(res => {
-                    if (!res.ok) throw new Error("Not found");
-                    return res.text();
-                })
-                .then(md => {
-                    document.getElementById('readme').innerHTML = marked.parse(md);
-                    readmeLoaded = true;
-                })
-                .catch(() => {
-                    // Fallback to master
-                    fetch("https://raw.githubusercontent.com/codefl0w/QuickADB/master/README.md")
-                        .then(res => res.text())
-                        .then(md => {
-                            document.getElementById('readme').innerHTML = marked.parse(md);
-                            readmeLoaded = true;
-                        })
-                        .catch(() => {
-                            document.getElementById('readme').textContent = "Failed to load README. Please refresh the page and try again.";
-                        });
-                });
-        }
+    wrapper.style.display = isHidden ? "block" : "none";
+    arrow.style.transform = isHidden ? "rotate(90deg)" : "rotate(0deg)";
+
+    if (!quickAdbReadmeLoaded && isHidden) {
+      fetch("https://raw.githubusercontent.com/codefl0w/QuickADB/main/README.md")
+        .then(response => {
+          if (!response.ok) {
+            throw new Error("README not found on main");
+          }
+          return response.text();
+        })
+        .then(markdown => {
+          document.getElementById("readme").innerHTML = marked.parse(markdown);
+          quickAdbReadmeLoaded = true;
+        })
+        .catch(() => {
+          fetch("https://raw.githubusercontent.com/codefl0w/QuickADB/master/README.md")
+            .then(response => {
+              if (!response.ok) {
+                throw new Error("README not found on master");
+              }
+              return response.text();
+            })
+            .then(markdown => {
+              document.getElementById("readme").innerHTML = marked.parse(markdown);
+              quickAdbReadmeLoaded = true;
+            })
+            .catch(() => {
+              document.getElementById("readme").textContent = "Failed to load README. Please refresh and try again.";
+            });
+        });
     }
+  }
 </script>
 
-<br>
-<p>Source code and documentation can be found on QuickADB's GitHub repository.</p>
-<br>
-<div style="padding: 0 1.5rem; margin: 1rem 0;">
-    <a href="https://github.com/codefl0w/QuickADB/releases" target="_blank" class="btn">
-        See all releases on GitHub
-    </a>
-</div>
+
