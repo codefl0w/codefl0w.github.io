@@ -20,7 +20,7 @@
 <text x="20" y="13" fill="#8b949e" font-size="13" font-family="Segoe UI, Helvetica, Arial, sans-serif">35</text>
 </g>
 <rect x="690" y="132.0" width="80" height="24" rx="12" fill="#d29922"/>
-<text x="730.0" y="148.0" fill="#ffffff" font-size="12" font-weight="bold" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="middle">5.9k</text>
+<text x="730.0" y="148.0" fill="#ffffff" font-size="12" font-weight="bold" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="middle">6.0k</text>
 <rect x="20" y="168" width="760" height="40" rx="6" fill="#161b22"/>
 <text x="32" y="193" fill="#e6edf3" font-size="14" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-weight="500">unsuper</text>
 <g transform="translate(590, 180)">
@@ -28,7 +28,7 @@
 <text x="20" y="13" fill="#8b949e" font-size="13" font-family="Segoe UI, Helvetica, Arial, sans-serif">5</text>
 </g>
 <rect x="690" y="176.0" width="80" height="24" rx="12" fill="#6e7681"/>
-<text x="730.0" y="192.0" fill="#ffffff" font-size="12" font-weight="bold" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="middle">225</text>
+<text x="730.0" y="192.0" fill="#ffffff" font-size="12" font-weight="bold" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="middle">226</text>
 <rect x="20" y="212" width="760" height="40" rx="6" fill="#161b22"/>
 <text x="32" y="237" fill="#e6edf3" font-size="14" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-weight="500">AndroidFileHostScraper</text>
 <g transform="translate(590, 224)">
@@ -36,7 +36,7 @@
 <text x="20" y="13" fill="#8b949e" font-size="13" font-family="Segoe UI, Helvetica, Arial, sans-serif">7</text>
 </g>
 <rect x="690" y="220.0" width="80" height="24" rx="12" fill="#6e7681"/>
-<text x="730.0" y="236.0" fill="#ffffff" font-size="12" font-weight="bold" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="middle">153</text>
+<text x="730.0" y="236.0" fill="#ffffff" font-size="12" font-weight="bold" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="middle">154</text>
 <rect x="20" y="256" width="760" height="40" rx="6" fill="#161b22"/>
 <text x="32" y="281" fill="#e6edf3" font-size="14" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-weight="500">Ares-Backlight-Changer</text>
 <g transform="translate(590, 268)">
