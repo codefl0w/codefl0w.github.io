@@ -12,7 +12,7 @@
 <text x="20" y="13" fill="#8b949e" font-size="13" font-family="Segoe UI, Helvetica, Arial, sans-serif">110</text>
 </g>
 <rect x="690" y="88.0" width="80" height="24" rx="12" fill="#2ea44f"/>
-<text x="730.0" y="104.0" fill="#ffffff" font-size="12" font-weight="bold" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="middle">45k</text>
+<text x="730.0" y="104.0" fill="#ffffff" font-size="12" font-weight="bold" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="middle">46k</text>
 <rect x="20" y="124" width="760" height="40" rx="6" fill="#161b22"/>
 <text x="32" y="149" fill="#e6edf3" font-size="14" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-weight="500">QuickADB</text>
 <g transform="translate(590, 136)">
@@ -52,7 +52,7 @@
 <text x="20" y="13" fill="#8b949e" font-size="13" font-family="Segoe UI, Helvetica, Arial, sans-serif">4</text>
 </g>
 <rect x="690" y="308.0" width="80" height="24" rx="12" fill="#6e7681"/>
-<text x="730.0" y="324.0" fill="#ffffff" font-size="12" font-weight="bold" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="middle">51</text>
+<text x="730.0" y="324.0" fill="#ffffff" font-size="12" font-weight="bold" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="middle">52</text>
 <rect x="20" y="344" width="760" height="40" rx="6" fill="#161b22"/>
 <text x="32" y="369" fill="#e6edf3" font-size="14" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-weight="500">MiniOS</text>
 <g transform="translate(590, 356)">
