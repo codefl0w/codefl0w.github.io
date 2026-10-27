@@ -1,0 +1,229 @@
+# Single source of truth for codefl0w projects
+# Automatically syncable via python scripts/sync_repos.py
+
+- name: QuickADB
+  slug: quickadb
+  description: "Polished GUI toolkit for ADB and Fastboot with one-click workflows, device manager, and package tools."
+  language: Python
+  stars: 195
+  category: Android Tools
+  featured: true
+  github: "https://github.com/codefl0w/QuickADB"
+  page: "/archive/projects/quickadb.html"
+  demo: ""
+  topics:
+    - adb
+    - fastboot
+    - android
+    - gui
+    - pyqt6
+
+- name: mtkclient-windows-installer
+  slug: mtkclient-windows-installer
+  description: "Fully automated installer, driver setup, and updater for MTKClient on Windows systems."
+  language: Python
+  stars: 129
+  category: Android Tools
+  featured: true
+  github: "https://github.com/codefl0w/mtkclient-windows-installer"
+  page: "/archive/projects/mtkclient-windows-installer.html"
+  demo: ""
+  topics:
+    - mediatek
+    - mtk
+    - android
+    - windows
+    - flasher
+
+- name: unsuper
+  slug: unsuper
+  description: "Ultra-fast Android super.img partition dumper and unpacker, written in pure Python."
+  language: Python
+  stars: 23
+  category: Android Tools
+  featured: true
+  github: "https://github.com/codefl0w/unsuper"
+  page: "/archive/projects/unsuper.html"
+  demo: ""
+  topics:
+    - super-img
+    - partitions
+    - android
+    - reverse-engineering
+
+- name: MiniOS
+  slug: minios
+  description: "Self-hostable lightweight web OS and app drawer optimized for low-end feature phone browsers."
+  language: Python
+  stars: 20
+  category: Web Tools
+  featured: true
+  github: "https://github.com/codefl0w/MiniOS"
+  page: "/archive/projects/minios.html"
+  demo: "https://miniosdemo.pythonanywhere.com/"
+  topics:
+    - feature-phones
+    - dumbphones
+    - flask
+    - web-os
+
+- name: llm-adb
+  slug: llm-adb
+  description: "Token-efficient ADB wrapper and CLI for LLM agents to autonomously inspect and navigate Android devices."
+  language: Python
+  stars: 0
+  category: Automation
+  featured: true
+  github: "https://github.com/codefl0w/llm-adb"
+  page: "/archive/projects/llm-adb.html"
+  demo: ""
+  topics:
+    - adb
+    - llm-agents
+    - android
+    - ai-tooling
+
+- name: Speye
+  slug: speye
+  description: "FOSS Android notification logger with rich text, media attachment tracking, and local import/export."
+  language: Kotlin
+  stars: 4
+  category: Android Tools
+  featured: true
+  github: "https://github.com/codefl0w/Speye"
+  page: "/archive/projects/speye.html"
+  demo: ""
+  topics:
+    - android
+    - notifications
+    - foss
+    - privacy
+    - kotlin
+
+- name: Wear-Activity-Launcher
+  slug: wear-activity-launcher
+  description: "WearOS launcher to browse installed packages, inspect exported activities, and create pinned watch shortcuts."
+  language: Kotlin
+  stars: 5
+  category: Android Tools
+  featured: false
+  github: "https://github.com/codefl0w/Wear-Activity-Launcher"
+  page: "/archive/projects/wear-activity-launcher.html"
+  demo: ""
+  topics:
+    - wearos
+    - android
+    - activities
+    - kotlin
+
+- name: AndroidFileHostScraper
+  slug: android-file-host-scraper
+  description: "CLI scraper and bulk downloader for AndroidFileHost with mirror sorting and pagination support."
+  language: Python
+  stars: 12
+  category: Automation
+  featured: false
+  github: "https://github.com/codefl0w/AndroidFileHostScraper"
+  page: "/archive/projects/android-file-host-scraper.html"
+  demo: ""
+  topics:
+    - android
+    - scraper
+    - automation
+    - mirrors
+
+- name: Ares-Backlight-Changer
+  slug: ares-backlight-changer
+  description: "Root tool to change LED backlight colors and gaming trigger indicators on Redmi K40 Gaming (Ares)."
+  language: Shell
+  stars: 3
+  category: Android Tools
+  featured: false
+  github: "https://github.com/codefl0w/Ares-Backlight-Changer"
+  page: "/archive/projects/ares-backlight-changer.html"
+  demo: ""
+  topics:
+    - redmi-k40
+    - sysfs
+    - led
+    - root
+
+- name: gh-boards
+  slug: gh-boards
+  description: "Automated stat boards, star trackers, and repository SVG badge generator for GitHub profiles and READMEs."
+  language: Python
+  stars: 0
+  category: Web Tools
+  featured: false
+  github: "https://github.com/codefl0w/gh-boards"
+  page: "/archive/projects/gh-boards.html"
+  demo: "/archive/web-tools/gh-boards/"
+  topics:
+    - github
+    - badges
+    - svg
+    - statistics
+    - web-tool
+
+- name: EbootSync
+  slug: ebootsync
+  description: "Automatic FTP pusher daemon that watches and syncs eboot.bin for PS Vita homebrew development."
+  language: Python
+  stars: 1
+  category: Reverse Engineering
+  featured: false
+  github: "https://github.com/codefl0w/EbootSync"
+  page: "/archive/projects/ebootsync.html"
+  demo: ""
+  topics:
+    - ps-vita
+    - homebrew
+    - ftp-sync
+    - dev-tool
+
+- name: MarmDump
+  slug: marmdump
+  description: "Archive extractor and parser for Marmalade SDK compressed DTRZ (.dz) game resource containers."
+  language: Python
+  stars: 0
+  category: Reverse Engineering
+  featured: false
+  github: "https://github.com/codefl0w/MarmDump"
+  page: "/archive/projects/marmdump.html"
+  demo: ""
+  topics:
+    - reverse-engineering
+    - marmalade-sdk
+    - archive-extractor
+    - game-re
+
+- name: DiScraper
+  slug: discraper
+  description: "Lightweight Discord message and media attachment scraper utility using user tokens."
+  language: Python
+  stars: 0
+  category: Automation
+  featured: false
+  github: "https://github.com/codefl0w/DiScraper"
+  page: "/archive/projects/discraper.html"
+  demo: ""
+  topics:
+    - discord
+    - scraper
+    - automation
+    - python
+
+- name: privacy-pages
+  slug: privacy-pages
+  description: "Static, privacy-first privacy policy hosting template for Android apps and developer stores."
+  language: HTML
+  stars: 1
+  category: Web Tools
+  featured: false
+  github: "https://github.com/codefl0w/privacy-pages"
+  page: "/archive/projects/privacy-pages.html"
+  demo: "http://privacy.codefl0w.xyz/"
+  topics:
+    - privacy-policy
+    - android
+    - static-site

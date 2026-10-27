@@ -1,0 +1,134 @@
+---
+layout: default
+---
+{% assign repo_name = page.repo | default: page.title %}
+{% assign repo_url = page.github | default: "https://github.com/codefl0w/" | append: repo_name %}
+{% assign releases_url = repo_url | append: "/releases" %}
+
+<article class="project-detail">
+  <div class="project-detail__topbar">
+    <a href="/archive/projects/" class="project-detail__back">
+      &larr; Back to All Projects
+    </a>
+  </div>
+
+  <header class="project-detail__header">
+    <div class="project-detail__meta">
+      {% if page.language %}
+        <span class="pill-badge pill-badge--lang">{{ page.language }}</span>
+      {% endif %}
+      {% if page.category %}
+        <span class="pill-badge pill-badge--cat">{{ page.category }}</span>
+      {% endif %}
+      {% if page.stars and page.stars > 0 %}
+        <span class="pill-badge pill-badge--stars">
+          <svg viewBox="0 0 16 16" width="12" height="12" aria-hidden="true" fill="currentColor">
+            <path d="M8 .25a.75.75 0 0 1 .673.418l1.882 3.815 4.21.612a.75.75 0 0 1 .416 1.279l-3.046 2.97.719 4.192a.751.751 0 0 1-1.088.791L8 12.347l-3.766 1.98a.75.75 0 0 1-1.088-.79l.72-4.194L.818 6.374a.75.75 0 0 1 .416-1.28l4.21-.611L7.327.668A.75.75 0 0 1 8 .25Z"></path>
+          </svg>
+          {{ page.stars }} stars
+        </span>
+      {% endif %}
+    </div>
+
+    <p class="project-detail__lead">
+      {{ page.description }}
+    </p>
+
+    <div class="project-detail__actions">
+      <a href="{{ repo_url }}" target="_blank" rel="noopener" class="btn">
+        <svg viewBox="0 0 16 16" width="15" height="15" aria-hidden="true" fill="currentColor" style="vertical-align:-2px;margin-right:6px;">
+          <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path>
+        </svg>
+        View on GitHub
+      </a>
+
+      {% if page.demo and page.demo != "" %}
+        <a href="{{ page.demo }}" target="_blank" rel="noopener" class="btn btn-secondary">
+          Live Demo &rarr;
+        </a>
+      {% endif %}
+
+      <a href="{{ releases_url }}" target="_blank" rel="noopener" class="btn btn-secondary">
+        Releases / Downloads
+      </a>
+    </div>
+  </header>
+
+  {% if content and content != "" %}
+    <div class="project-detail__custom-content">
+      {{ content }}
+    </div>
+  {% endif %}
+
+  <section class="project-detail__readme-section">
+    <div class="readme-header">
+      <div class="readme-title">
+        <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true" fill="currentColor">
+          <path d="M0 1.75A.75.75 0 0 1 .75 1h4.253c1.227 0 2.317.59 3 1.501A3.743 3.743 0 0 1 11.006 1h4.244a.75.75 0 0 1 .75.75v10.5a.75.75 0 0 1-.75.75h-4.244a2.25 2.25 0 0 0-1.506.575l-.5.438a.75.75 0 0 1-.952 0l-.5-.438A2.25 2.25 0 0 0 5.003 13H.75a.75.75 0 0 1-.75-.75V1.75Z"></path>
+        </svg>
+        <span>README.md</span>
+      </div>
+      <button type="button" id="readme-toggle-btn" class="readme-toggle-btn" onclick="toggleProjectReadme()">
+        <span id="readme-arrow">&blacktriangleright;</span>
+        <span id="readme-label">Show Full README</span>
+      </button>
+    </div>
+
+    <div id="readme-container" class="readme-container" style="display: none;">
+      <div id="readme-content" class="markdown-body">
+        <p class="readme-loading">Fetching README from GitHub...</p>
+      </div>
+    </div>
+  </section>
+</article>
+
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<script>
+  let readmeLoaded = false;
+  const repoName = "{{ repo_name }}";
+
+  function toggleProjectReadme() {
+    const container = document.getElementById("readme-container");
+    const arrow = document.getElementById("readme-arrow");
+    const label = document.getElementById("readme-label");
+    const isHidden = container.style.display === "none";
+
+    container.style.display = isHidden ? "block" : "none";
+    arrow.innerHTML = isHidden ? "&#9660;" : "&blacktriangleright;";
+    label.textContent = isHidden ? "Hide README" : "Show Full README";
+
+    if (isHidden && !readmeLoaded) {
+      loadReadme(repoName);
+    }
+  }
+
+  function loadReadme(repo) {
+    const content = document.getElementById("readme-content");
+    const primaryUrl = `https://raw.githubusercontent.com/codefl0w/${repo}/main/README.md`;
+    const fallbackUrl = `https://raw.githubusercontent.com/codefl0w/${repo}/master/README.md`;
+
+    fetch(primaryUrl)
+      .then(res => {
+        if (!res.ok) throw new Error("main branch not found");
+        return res.text();
+      })
+      .then(text => renderMarkdown(text))
+      .catch(() => {
+        fetch(fallbackUrl)
+          .then(res => {
+            if (!res.ok) throw new Error("master branch not found");
+            return res.text();
+          })
+          .then(text => renderMarkdown(text))
+          .catch(() => {
+            content.innerHTML = `<p class="readme-error">Unable to fetch README directly. <a href="{{ repo_url }}" target="_blank" rel="noopener">View README on GitHub &rarr;</a></p>`;
+          });
+      });
+  }
+
+  function renderMarkdown(md) {
+    const content = document.getElementById("readme-content");
+    content.innerHTML = marked.parse(md);
+    readmeLoaded = true;
+  }
+</script>

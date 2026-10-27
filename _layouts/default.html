@@ -19,8 +19,6 @@
   <meta property="og:type" content="{{ page.og_type | default: 'website' }}">
   <meta property="og:image" content="{{ page_image | absolute_url }}">
 
-
-
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -38,131 +36,58 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@760&display=swap" rel="stylesheet">
-  <style>
-    header {
-      position: relative;
-    }
-
-    .header-breadcrumb-wrap {
-      position: absolute;
-      top: 0.35rem;
-      left: 0.75rem;
-      z-index: 2;
-      max-width: calc(100% - 1.5rem);
-      display: flex;
-      justify-content: flex-start;
-      font-family: system-ui, sans-serif;
-      align-items: center;
-    }
-
-    .header-home {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 28px;
-      height: 28px;
-      border-radius: 8px;
-      background: #ff8ff5;
-      color: #121212;
-      text-decoration: none;
-      flex: 0 0 auto;
-      margin-right: 0.5rem;
-    }
-
-    .header-home svg {
-      width: 14px;
-      height: 14px;
-      stroke: currentColor;
-      fill: none;
-      stroke-width: 2;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-    }
-
-    .breadcrumbs {
-      display: flex;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 0.35rem;
-      margin: 0;
-      padding: 0;
-      list-style: none;
-      color: #c7c7c7;
-      font-size: 0.82rem;
-      min-width: 0;
-      justify-content: flex-start;
-      flex-wrap: nowrap;
-      overflow: hidden;
-    }
-
-    .breadcrumbs li {
-      display: inline-flex;
-      align-items: center;
-      min-width: 0;
-    }
-
-    .breadcrumbs li + li::before {
-      content: "/";
-      margin: 0 0.35rem;
-      opacity: 0.65;
-    }
-
-    .breadcrumbs a,
-    .breadcrumbs span {
-      color: #e0e0e0;
-      text-decoration: none;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      max-width: 22ch;
-    }
-
-    .breadcrumbs span[aria-current="page"] {
-      color: #ff8ff5;
-      font-weight: 600;
-    }
-
-    @media (max-width: 600px) {
-      .breadcrumbs {
-        font-size: 0.75rem;
-      }
-    }
-  </style>
 
   <script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="fl0w" data-description="Support me on Buy me a coffee!" data-message="" data-color="#ff8ff5" data-position="Right" data-x_margin="18" data-y_margin="64"></script>
 </head>
 <body>
-  <script src="https://keepandroidopen.org/banner.js?size=mini"></script>
   {% assign page_parts = page.url | split: "/" %}
   {% assign current_path = page.url %}
   {% assign crumb_path = "" %}
-  <header>
-    <div class="header-breadcrumb-wrap">
-      <a class="header-home" href="/" aria-label="Home">
-        <svg viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M3 10.5 12 3l9 7.5"></path>
-          <path d="M5.5 9.5V21h13V9.5"></path>
-        </svg>
-      </a>
-      <ol class="breadcrumbs" aria-label="Breadcrumb">
-        <li><a href="/">Home</a></li>
-        {% for part in page_parts %}
-          {% unless part == "" %}
-            {% assign crumb_path = crumb_path | append: "/" | append: part %}
-            {% assign crumb_href = crumb_path | append: "/" %}
-            {% assign crumb_label = part | replace: ".html", "" | replace: "-", " " | capitalize %}
-            <li>
-              {% if current_path == crumb_path or current_path == crumb_href %}
-                <span aria-current="page">{{ crumb_label }}</span>
-              {% else %}
-                <a href="{{ crumb_href }}">{{ crumb_label }}</a>
-              {% endif %}
-            </li>
-          {% endunless %}
-        {% endfor %}
-      </ol>
+
+  <header class="site-header">
+    <div class="header-topbar">
+      <div class="header-breadcrumb-wrap">
+        <a class="header-home" href="/" aria-label="Home">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M3 10.5 12 3l9 7.5"></path>
+            <path d="M5.5 9.5V21h13V9.5"></path>
+          </svg>
+        </a>
+        <ol class="breadcrumbs" aria-label="Breadcrumb">
+          <li><a href="/">Home</a></li>
+          {% for part in page_parts %}
+            {% unless part == "" %}
+              {% assign crumb_path = crumb_path | append: "/" | append: part %}
+              {% assign crumb_href = crumb_path | append: "/" %}
+              {% assign crumb_label = part | replace: ".html", "" | replace: "-", " " | capitalize %}
+              <li>
+                {% if current_path == crumb_path or current_path == crumb_href %}
+                  <span aria-current="page">{{ crumb_label }}</span>
+                {% else %}
+                  <a href="{{ crumb_href }}">{{ crumb_label }}</a>
+                {% endif %}
+              </li>
+            {% endunless %}
+          {% endfor %}
+        </ol>
+      </div>
+
+      <nav class="header-nav" aria-label="Main Navigation">
+        <a href="/archive/projects/" class="header-nav__link {% if page.url contains '/archive/projects' %}header-nav__link--active{% endif %}">Projects</a>
+        <a href="/archive/" class="header-nav__link {% if page.url == '/archive/' %}header-nav__link--active{% endif %}">Archive</a>
+        <a href="/docs/" class="header-nav__link {% if page.url contains '/docs' %}header-nav__link--active{% endif %}">Docs</a>
+        <a href="/contact" class="header-nav__link {% if page.url contains '/contact' %}header-nav__link--active{% endif %}">Contact</a>
+        <a href="https://github.com/codefl0w" target="_blank" rel="noopener" class="header-nav__link header-nav__link--gh" title="GitHub">
+          <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true" fill="currentColor">
+            <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path>
+          </svg>
+        </a>
+      </nav>
     </div>
-    <h1 id="animated-title" data-title="{{ page.title }}"></h1>
+
+    <div class="header-title-wrap">
+      <h1 id="animated-title" data-title="{{ page.title }}"></h1>
+    </div>
   </header>
 
   <main>
@@ -171,20 +96,29 @@
 
   <footer class="site-footer">
     <div class="site-footer__left">
-      &copy; {{ site.time | date: "%Y" }} fl0w
+      &copy; {{ site.time | date: "%Y" }} fl0w &middot; Personal portfolio & archive
     </div>
     <div class="site-footer__right">
       <a href="/">About</a>
       <span class="site-footer__sep">&middot;</span>
-      <a href="/archive">Archive</a>
+      <a href="/archive/projects/">Projects</a>
+      <span class="site-footer__sep">&middot;</span>
+      <a href="/archive/">Archive</a>
+      <span class="site-footer__sep">&middot;</span>
+      <a href="/docs/">Docs</a>
+      <span class="site-footer__sep">&middot;</span>
+      <a href="/contact">Contact</a>
+      <span class="site-footer__sep">&middot;</span>
+      <a href="https://github.com/codefl0w" target="_blank" rel="noopener">GitHub</a>
     </div>
   </footer>
 
   <script>
     document.addEventListener("DOMContentLoaded", () => {
       const h1 = document.getElementById("animated-title");
+      if (!h1) return;
       const fullTitle = h1.getAttribute("data-title") || "";
-      const delay = 80;
+      const delay = 70;
   
       let i = 0;
       function typeNext() {
