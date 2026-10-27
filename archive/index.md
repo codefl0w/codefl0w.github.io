@@ -24,11 +24,10 @@ description: "Central archive of Android tooling, technical notes, open-source p
         Complete catalog of open-source applications, automation tools, and utilities with full READMEs and source links.
       </p>
       <div class="archive-card__tags">
-        <span>QuickADB</span>
-        <span>unsuper</span>
-        <span>mtkclient installer</span>
-        <span>llm-adb</span>
-        <span>Speye</span>
+        <span>GUI Tools</span>
+        <span>CLI Utilities</span>
+        <span>Automation</span>
+        <span>Reverse Engineering</span>
       </div>
     </a>
 

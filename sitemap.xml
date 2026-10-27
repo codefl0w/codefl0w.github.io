@@ -5,27 +5,44 @@ permalink: /sitemap.xml
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-  {%- comment -%} POSTS (always indexable) {%- endcomment -%}
+  {%- comment -%} POSTS {%- endcomment -%}
   {% for post in site.posts %}
+    {% unless post.noindex %}
   <url>
     <loc>{{ site.url | append: post.url }}</loc>
     <lastmod>{{ post.date | date_to_xmlschema }}</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
+    {% endunless %}
   {% endfor %}
 
-  {%- comment -%} PAGES (filter out assets, robots, sitemap; accept .md/.markdown/.html/.htm) {%- endcomment -%}
+  {%- comment -%} PAGES {%- endcomment -%}
   {% for page in site.pages %}
     {% assign p = page.path | downcase %}
     {% assign ext = p | split: '.' | last %}
-    {% unless p contains 'assets/' or page.url == '/robots.txt' or page.url == '/sitemap.xml' %}
+    {% assign url = page.url | replace: "index.html", "" %}
+    {% unless page.noindex or p contains 'assets/' or url contains '404' or page.url == '/robots.txt' or page.url == '/sitemap.xml' or page.url == '/llms.txt' or page.url == '/llms-full.txt' %}
       {% if ext == 'md' or ext == 'markdown' or ext == 'html' or ext == 'htm' %}
   <url>
-    <loc>{{ site.url | append: page.url }}</loc>
+    <loc>{{ site.url | append: url }}</loc>
     <lastmod>{% if page.date %}{{ page.date | date_to_xmlschema }}{% else %}{{ site.time | date_to_xmlschema }}{% endif %}</lastmod>
-    <changefreq>{% if page.url == '/' %}weekly{% else %}monthly{% endif %}</changefreq>
-    <priority>{% if page.url == '/' %}1.0{% else %}0.6{% endif %}</priority>
+    {% if url == '/' %}
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    {% elsif url == '/archive/projects/' %}
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    {% elsif url == '/archive/' or url contains '/docs/' %}
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    {% elsif url contains '/archive/projects/' %}
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    {% else %}
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    {% endif %}
   </url>
       {% endif %}
     {% endunless %}

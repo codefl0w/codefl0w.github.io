@@ -5,6 +5,24 @@ layout: default
 {% assign repo_url = page.github | default: "https://github.com/codefl0w/" | append: repo_name %}
 {% assign releases_url = repo_url | append: "/releases" %}
 
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "{{ page.title }}",
+  "description": "{{ page.description | strip_html | normalize_whitespace }}",
+  "applicationCategory": "{{ page.category | default: 'DeveloperApplication' }}",
+  "operatingSystem": "Android, Windows, Linux",
+  "url": "{{ page.url | absolute_url }}",
+  "codeRepository": "{{ repo_url }}",
+  "author": {
+    "@type": "Person",
+    "name": "fl0w",
+    "url": "{{ site.url }}"
+  }
+}
+</script>
+
 <article class="project-detail">
   <div class="project-detail__topbar">
     <a href="/archive/projects/" class="project-detail__back">

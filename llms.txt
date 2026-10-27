@@ -1,0 +1,36 @@
+---
+layout: null
+permalink: /llms.txt
+---
+# codefl0w
+
+> Personal portfolio and technical archive of Android systems developer fl0w. Specializing in low-level Android internals, partition tooling, chipset automation, reverse-engineering, and LLM-agent device automation.
+
+## Flagship Projects
+
+{% for project in site.data.projects %}{% if project.featured %}- [{{ project.name }}]({{ site.url }}{{ project.page | default: project.github }}): {{ project.description }} (Language: {{ project.language }}, GitHub: {{ project.github }})
+{% endif %}{% endfor %}
+
+## All Repositories & Tools
+
+{% for project in site.data.projects %}- [{{ project.name }}]({{ site.url }}{{ project.page | default: project.github }}): {{ project.description }} (Language: {{ project.language }}, Category: {{ project.category }}, GitHub: {{ project.github }})
+{% endfor %}
+
+## Directory & Documentation
+
+- [Projects Hub]({{ site.url }}/archive/projects/): Full catalog with interactive search, filters, and GitHub README previews.
+- [Archive Hub]({{ site.url }}/archive/): Top-level index of tools, documentation, downloads, and web utilities.
+- [Documentation & Notes]({{ site.url }}/docs/): Chipset behavior research, bootloader notes, and partition guides.
+- [Android Tools]({{ site.url }}/archive/android-tools/): Browser-based FRP bypass intent launcher and device shortcuts.
+- [Web Tools]({{ site.url }}/archive/web-tools/): gh-boards SVG badge generator, text formatter, and display test utilities.
+- [Full LLM Context]({{ site.url }}/llms-full.txt): Comprehensive technical specifications and repository metadata.
+
+## Author & Profiles
+
+- Author: fl0w
+- Website: {{ site.url }}
+- GitHub: https://github.com/codefl0w
+- X / Twitter: https://x.com/codefl0w_ (@codefl0w_)
+- Telegram: https://t.me/codefl0w
+- XDA Forums: https://xdaforums.com/m/fl0w.12361087/
+- Email: fl0w_dev@protonmail.com

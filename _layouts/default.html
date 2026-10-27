@@ -18,15 +18,45 @@
   <meta property="og:site_name" content="{{ site.title }}">
   <meta property="og:type" content="{{ page.og_type | default: 'website' }}">
   <meta property="og:image" content="{{ page_image | absolute_url }}">
+  <meta property="og:locale" content="en_US">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@codefl0w_">
+  <meta name="twitter:creator" content="@codefl0w_">
+  <meta name="twitter:title" content="{{ page.title | default: site.title }}">
+  <meta name="twitter:description" content="{{ page_description | strip_html | normalize_whitespace | truncate: 200 }}">
+  <meta name="twitter:image" content="{{ page_image | absolute_url }}">
+
+  <link rel="alternate" type="text/plain" href="/llms.txt" title="LLM Context">
 
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "{{ site.author | default: 'fl0w' }}",
-    "url": "{{ site.url | append: site.baseurl }}",
-    "sameAs": [
-      "https://github.com/codefl0w"
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": "{{ site.url }}#fl0w",
+        "name": "{{ site.author | default: 'fl0w' }}",
+        "url": "{{ site.url }}",
+        "jobTitle": "Android Systems Developer & Reverse Engineer",
+        "sameAs": [
+          "https://github.com/codefl0w",
+          "https://x.com/codefl0w_",
+          "https://twitter.com/codefl0w_",
+          "https://t.me/codefl0w",
+          "https://xdaforums.com/m/fl0w.12361087/"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "{{ site.url }}#website",
+        "url": "{{ site.url }}",
+        "name": "{{ site.title }}",
+        "description": "{{ site.description }}",
+        "publisher": {
+          "@id": "{{ site.url }}#fl0w"
+        }
+      }
     ]
   }
   </script>
@@ -110,6 +140,8 @@
       <a href="/contact">Contact</a>
       <span class="site-footer__sep">&middot;</span>
       <a href="https://github.com/codefl0w" target="_blank" rel="noopener">GitHub</a>
+      <span class="site-footer__sep">&middot;</span>
+      <a href="https://x.com/codefl0w_" target="_blank" rel="noopener">X</a>
     </div>
   </footer>
 

@@ -1,14 +1,17 @@
 ---
 layout: default
 title: Contact Me
-description: "Contact fl0w through GitHub, Telegram, XDA, or email."
+description: "Get in touch with fl0w for questions, ideas, and collaborations."
 ---
 
 <section class="about-hero">
   <div class="about-grid">
     <div>
-      <div class="about-badge">Contact</div>
-      <p class="about-lead">You can contact me through these links:</p>
+      <div class="about-badge">Contact &middot; Profiles</div>
+      <p class="about-kicker">Get in touch with fl0w</p>
+      <p class="about-lead">
+        Always open to questions, ideas, and collaborations. For bug reports or feature requests on specific projects, please use GitHub Issues on the respective repository instead.
+      </p>
 
       <div class="contact-grid">
         <a class="contact-card" href="https://github.com/codefl0w" target="_blank" rel="noopener">
@@ -20,7 +23,21 @@ description: "Contact fl0w through GitHub, Telegram, XDA, or email."
             </span>
             GitHub
           </h2>
-          <p>codefl0w</p>
+          <p class="contact-handle">codefl0w</p>
+          <p class="contact-sub">Repositories, code & public contributions</p>
+        </a>
+
+        <a class="contact-card" href="https://x.com/codefl0w_" target="_blank" rel="noopener">
+          <h2>
+            <span class="contact-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+              </svg>
+            </span>
+            X / Twitter
+          </h2>
+          <p class="contact-handle">@codefl0w_</p>
+          <p class="contact-sub">DMs, updates & developer thoughts</p>
         </a>
 
         <a class="contact-card" href="https://t.me/codefl0w#" target="_blank" rel="noopener">
@@ -32,7 +49,8 @@ description: "Contact fl0w through GitHub, Telegram, XDA, or email."
             </span>
             Telegram
           </h2>
-          <p>@codefl0w</p>
+          <p class="contact-handle">@codefl0w</p>
+          <p class="contact-sub">Direct messaging & quick chat</p>
         </a>
 
         <a class="contact-card" href="https://xdaforums.com/m/fl0w.12361087/" target="_blank" rel="noopener">
@@ -43,9 +61,10 @@ description: "Contact fl0w through GitHub, Telegram, XDA, or email."
                 <path d="M10.9 4.4V.1H0v24.5h5.5l5.4 9V20.4H4.5v-16z"></path>
               </svg>
             </span>
-            XDA
+            XDA Forums
           </h2>
-          <p>fl0w on XDA Forums</p>
+          <p class="contact-handle">fl0w</p>
+          <p class="contact-sub">Community threads & forum discussions</p>
         </a>
 
         <a class="contact-card" href="mailto:fl0w_dev@protonmail.com">
@@ -56,11 +75,44 @@ description: "Contact fl0w through GitHub, Telegram, XDA, or email."
                 <path d="m4 7 8 6 8-6"></path>
               </svg>
             </span>
-            Email
+            Proton Mail
           </h2>
-          <p>fl0w_dev@protonmail.com</p>
+          <p class="contact-handle">fl0w_dev@protonmail.com</p>
+          <p class="contact-sub">Direct, confidential, or encrypted email</p>
         </a>
       </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact-section">
+  <div class="section-header-row">
+    <div>
+      <h2 class="about-title">Reach Out</h2>
+      <p class="section-subtitle">How best to connect depending on what you have in mind.</p>
+    </div>
+  </div>
+
+  <div class="contact-guide-grid">
+    <div class="contact-guide-card">
+      <h3>💬 Questions & Discussions</h3>
+      <p>
+        Curious about something or want to bounce an idea around? Feel free to reach out on Telegram, X DMs, or email. Always open to talking about software, systems, or tech in general.
+      </p>
+    </div>
+
+    <div class="contact-guide-card">
+      <h3>🤝 Collaborations & Projects</h3>
+      <p>
+        Open to interesting open-source initiatives, experimental tools, and collaborative developer work. Drop a line if you have something you'd like to build together.
+      </p>
+    </div>
+
+    <div class="contact-guide-card">
+      <h3>📌 Project Bug Reports</h3>
+      <p>
+        Found a bug or have a feature request for a specific tool? Please open an issue directly on that repository on GitHub so it can be tracked and resolved publicly.
+      </p>
     </div>
   </div>
 </section>
