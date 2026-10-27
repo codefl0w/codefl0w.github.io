@@ -2,7 +2,7 @@
 layout: project
 title: DiScraper
 repo: DiScraper
-description: "Lightweight Discord message and media attachment scraper utility based on user tokens."
+description: "Discord scraper utility based on a user token. Saves messages and attachments."
 language: Python
 category: Automation
 stars: 0

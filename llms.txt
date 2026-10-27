@@ -4,7 +4,7 @@ permalink: /llms.txt
 ---
 # codefl0w
 
-> Personal portfolio and technical archive of Android systems developer fl0w. Specializing in low-level Android internals, partition tooling, chipset automation, reverse-engineering, and LLM-agent device automation.
+> Personal portfolio and archive of fl0w. Android low-level systems & automation developer, hobbyist security researcher.
 
 ## Flagship Projects
 
@@ -20,8 +20,8 @@ permalink: /llms.txt
 
 - [Projects Hub]({{ site.url }}/archive/projects/): Full catalog with interactive search, filters, and GitHub README previews.
 - [Archive Hub]({{ site.url }}/archive/): Top-level index of tools, documentation, downloads, and web utilities.
-- [Documentation & Notes]({{ site.url }}/docs/): Chipset behavior research, bootloader notes, and partition guides.
-- [Android Tools]({{ site.url }}/archive/android-tools/): Browser-based FRP bypass intent launcher and device shortcuts.
+- [Documentation & Notes]({{ site.url }}/docs/): Android platform notes, chipset research, and tooling write-ups.
+- [Android Tools]({{ site.url }}/archive/android-tools/): Browser-based FRP bypass intent launcher.
 - [Web Tools]({{ site.url }}/archive/web-tools/): gh-boards SVG badge generator, text formatter, and display test utilities.
 - [Full LLM Context]({{ site.url }}/llms-full.txt): Comprehensive technical specifications and repository metadata.
 

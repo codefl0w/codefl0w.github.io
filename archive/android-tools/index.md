@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Android Tools
-description: "Browser-friendly Android utilities for FRP bypass, activity launching, and device tweaks."
+description: "Browser-friendly Android utilities for FRP bypass and system activity launching."
 ---
 
 

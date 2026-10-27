@@ -2,7 +2,7 @@
 layout: project
 title: llm-adb
 repo: llm-adb
-description: "Token-efficient ADB wrapper and CLI for LLM agents to autonomously inspect, navigate, and test Android devices."
+description: "Token-efficient ADB wrapper for LLMs to inspect and manage Android devices."
 language: Python
 category: Automation
 stars: 0

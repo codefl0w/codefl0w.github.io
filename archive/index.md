@@ -40,12 +40,12 @@ description: "Central archive of Android tooling, technical notes, open-source p
         </div>
       </div>
       <p class="archive-card__desc">
-        Browser-based shortcuts, FRP bypass intent launcher, sysfs scripts, and device tweaks.
+        Browser-based shortcuts and intent launchers for Android system activities.
       </p>
       <div class="archive-card__tags">
         <span>FRP Bypass Helper</span>
-        <span>Sysfs Tweaks</span>
         <span>Activity Launchers</span>
+        <span>Web Intents</span>
       </div>
     </a>
 
@@ -54,16 +54,16 @@ description: "Central archive of Android tooling, technical notes, open-source p
         <span class="archive-card__icon">📘</span>
         <div class="archive-card__title-wrap">
           <h2>Docs & Research</h2>
-          <span class="archive-card__count">Guides</span>
+          <span class="archive-card__count">Notes</span>
         </div>
       </div>
       <p class="archive-card__desc">
-        Chipset research notes, bootloader observations, partition layout write-ups, and step-by-step guides.
+        Technical notes covering Android platform behavior, chipset research, and tooling write-ups.
       </p>
       <div class="archive-card__tags">
-        <span>Chipsets</span>
-        <span>Super.img Format</span>
-        <span>ADB Guides</span>
+        <span>Android Notes</span>
+        <span>Chipset Research</span>
+        <span>Tooling</span>
       </div>
     </a>
 
@@ -90,16 +90,16 @@ description: "Central archive of Android tooling, technical notes, open-source p
         <span class="archive-card__icon">📌</span>
         <div class="archive-card__title-wrap">
           <h2>Downloads</h2>
-          <span class="archive-card__count">Dumps & Binaries</span>
+          <span class="archive-card__count">Resources</span>
         </div>
       </div>
       <p class="archive-card__desc">
-        Curated tool dumps, flashable archives, and partition images for device recovery and research.
+        Downloadable files, tool archives, and project resources.
       </p>
       <div class="archive-card__tags">
-        <span>Flashables</span>
-        <span>Tool Archives</span>
-        <span>Firmware Dumps</span>
+        <span>Tools</span>
+        <span>Archives</span>
+        <span>Resources</span>
       </div>
     </a>
   </div>

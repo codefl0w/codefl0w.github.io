@@ -2,7 +2,7 @@
 layout: project
 title: Wear Activity Launcher
 repo: Wear-Activity-Launcher
-description: "WearOS launcher to browse installed packages, inspect exported activities, and create pinned watch shortcuts."
+description: "Launch exported app activities on your WearOS device and create shortcuts."
 language: Kotlin
 category: Android Tools
 stars: 5

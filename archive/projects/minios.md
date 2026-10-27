@@ -2,7 +2,7 @@
 layout: project
 title: MiniOS
 repo: MiniOS
-description: "Self-hostable lightweight web OS and app drawer optimized for low-end feature phone browsers."
+description: "Self-hostable Flask app drawer and web OS for feature phones and dumbphone browsers."
 language: Python
 category: Web Tools
 stars: 20

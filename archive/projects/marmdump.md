@@ -2,7 +2,7 @@
 layout: project
 title: MarmDump
 repo: MarmDump
-description: "Archive extractor and parser for Marmalade SDK compressed DTRZ (.dz) game resource containers."
+description: "Dump Marmalade SDK DTRZ (.dz) archive contents found in older games."
 language: Python
 category: Reverse Engineering
 stars: 0

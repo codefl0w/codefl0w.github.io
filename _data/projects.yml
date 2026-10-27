@@ -3,7 +3,7 @@
 
 - name: QuickADB
   slug: quickadb
-  description: "Polished GUI toolkit for ADB and Fastboot with one-click workflows, device manager, and package tools."
+  description: "Python-based graphical interface for automating ADB & fastboot commands and workflows."
   language: Python
   stars: 195
   category: Android Tools
@@ -20,7 +20,7 @@
 
 - name: mtkclient-windows-installer
   slug: mtkclient-windows-installer
-  description: "Fully automated installer, driver setup, and updater for MTKClient on Windows systems."
+  description: "Fully automated installer / updater for MTKClient on Windows."
   language: Python
   stars: 129
   category: Android Tools
@@ -33,11 +33,10 @@
     - mtk
     - android
     - windows
-    - flasher
 
 - name: unsuper
   slug: unsuper
-  description: "Ultra-fast Android super.img partition dumper and unpacker, written in pure Python."
+  description: "The fastest Android super.img partition dumper ever, written in Python."
   language: Python
   stars: 23
   category: Android Tools
@@ -53,7 +52,7 @@
 
 - name: MiniOS
   slug: minios
-  description: "Self-hostable lightweight web OS and app drawer optimized for low-end feature phone browsers."
+  description: "Self-hostable web OS for feature phones."
   language: Python
   stars: 20
   category: Web Tools
@@ -69,7 +68,7 @@
 
 - name: llm-adb
   slug: llm-adb
-  description: "Token-efficient ADB wrapper and CLI for LLM agents to autonomously inspect and navigate Android devices."
+  description: "Token-efficient ADB (Android Debug Bridge) wrapper for LLMs to manage devices and test apps."
   language: Python
   stars: 0
   category: Automation
@@ -85,7 +84,7 @@
 
 - name: Speye
   slug: speye
-  description: "FOSS Android notification logger with rich text, media attachment tracking, and local import/export."
+  description: "FOSS notification logger app for Android with rich text & image support and import/export options."
   language: Kotlin
   stars: 4
   category: Android Tools
@@ -97,12 +96,11 @@
     - android
     - notifications
     - foss
-    - privacy
     - kotlin
 
 - name: Wear-Activity-Launcher
   slug: wear-activity-launcher
-  description: "WearOS launcher to browse installed packages, inspect exported activities, and create pinned watch shortcuts."
+  description: "Launch exported app activities on your WearOS device and create shortcuts."
   language: Kotlin
   stars: 5
   category: Android Tools
@@ -118,7 +116,7 @@
 
 - name: AndroidFileHostScraper
   slug: android-file-host-scraper
-  description: "CLI scraper and bulk downloader for AndroidFileHost with mirror sorting and pagination support."
+  description: "Simple and powerful Python script to look for keywords and download files from AndroidFileHost by imitating their API calls."
   language: Python
   stars: 12
   category: Automation
@@ -130,11 +128,10 @@
     - android
     - scraper
     - automation
-    - mirrors
 
 - name: Ares-Backlight-Changer
   slug: ares-backlight-changer
-  description: "Root tool to change LED backlight colors and gaming trigger indicators on Redmi K40 Gaming (Ares)."
+  description: "Change backlight colors for Redmi K40 Gaming [ARES/ARESIN]."
   language: Shell
   stars: 3
   category: Android Tools
@@ -144,13 +141,13 @@
   demo: ""
   topics:
     - redmi-k40
-    - sysfs
     - led
     - root
+    - android
 
 - name: gh-boards
   slug: gh-boards
-  description: "Automated stat boards, star trackers, and repository SVG badge generator for GitHub profiles and READMEs."
+  description: "Generate simple and elegant GitHub stat badges and boards for your profile or repository."
   language: Python
   stars: 0
   category: Web Tools
@@ -163,11 +160,10 @@
     - badges
     - svg
     - statistics
-    - web-tool
 
 - name: EbootSync
   slug: ebootsync
-  description: "Automatic FTP pusher daemon that watches and syncs eboot.bin for PS Vita homebrew development."
+  description: "Extracts eboot.bin from a selected VPK and pushes it to a selected FTP destination for PS Vita development."
   language: Python
   stars: 1
   category: Reverse Engineering
@@ -179,11 +175,10 @@
     - ps-vita
     - homebrew
     - ftp-sync
-    - dev-tool
 
 - name: MarmDump
   slug: marmdump
-  description: "Archive extractor and parser for Marmalade SDK compressed DTRZ (.dz) game resource containers."
+  description: "Dump Marmalade SDK DTRZ (.dz) archive contents found in old Android games."
   language: Python
   stars: 0
   category: Reverse Engineering
@@ -195,11 +190,10 @@
     - reverse-engineering
     - marmalade-sdk
     - archive-extractor
-    - game-re
 
 - name: DiScraper
   slug: discraper
-  description: "Lightweight Discord message and media attachment scraper utility using user tokens."
+  description: "Discord scraper utility based on a user token. Saves messages and attachments."
   language: Python
   stars: 0
   category: Automation
@@ -215,7 +209,7 @@
 
 - name: privacy-pages
   slug: privacy-pages
-  description: "Static, privacy-first privacy policy hosting template for Android apps and developer stores."
+  description: "Website template for hosting app privacy policies."
   language: HTML
   stars: 1
   category: Web Tools

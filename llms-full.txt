@@ -4,8 +4,8 @@ permalink: /llms-full.txt
 ---
 # codefl0w - Comprehensive Technical Archive
 
-> Developer portfolio and technical specifications for Android low-level developer fl0w.
-> Focus areas: Android internals, automation tooling, chipset behavior, reverse engineering, and LLM-agent bridges.
+> Developer portfolio and technical specifications for fl0w.
+> Android low-level systems & automation developer, hobbyist security researcher.
 
 ## About Developer
 
@@ -15,7 +15,7 @@ permalink: /llms-full.txt
 - X / Twitter: https://x.com/codefl0w_ (@codefl0w_)
 - Telegram: https://t.me/codefl0w
 - XDA Profile: https://xdaforums.com/m/fl0w.12361087/
-- Primary Technologies: Python, Kotlin, Android SDK/NDK, Linux sysfs, Bash/Shell, Reverse Engineering.
+- Primary Technologies: Python, Kotlin, Shell, Android SDK, Reverse Engineering.
 
 ---
 
@@ -40,19 +40,17 @@ permalink: /llms-full.txt
 ## Technical Structure & Archive Sections
 
 ### 1. Android Tools (`/archive/android-tools/`)
-Utilities for Android firmware, root, and recovery scenarios:
-- FRP Bypass Helper: Web-based intent launcher for Android settings, lock screen setup, and browser activities directly via Chrome intents on Android devices.
-- Hardware Sysfs Controls: Scripts for direct `/sys/class/led/` interaction (e.g. Ares Backlight Changer).
-- WearOS Utilities: Activity inspection and shortcut pinning on watch hardware.
+Browser-friendly utilities for Android workflows:
+- FRP Bypass Helper: Web-based intent launcher to open Android settings and system activities from the browser.
 
 ### 2. Documentation & Research (`/docs/`)
-Technical notes covering chipset behaviors (MediaTek MTK protocols, DA/brom interfaces), Android super.img LP partition header structures, and bootloader reverse-engineering observations.
+Technical notes covering Android platform behavior, chipset research, and tooling write-ups.
 
 ### 3. Web Tools (`/archive/web-tools/`)
 Lightweight browser-based client-side tools:
-- gh-boards: Open-source SVG generator for GitHub profile statistics, download counters, and star badges.
-- Text Formatter: In-browser text cleaning and whitespace manipulation.
+- gh-boards: Generate GitHub profile stat badges and boards.
+- Text Formatter: Browser utility to format text and adjust casing/spacing.
 - FPS Tester: Display refresh rate and frame delivery tester.
 
 ### 4. LLM Automation (`llm-adb`)
-Specialized token-efficient wrapper around Android Debug Bridge (ADB) optimized for autonomous AI agent inspection and UI manipulation without wasting token budget on verbose XML hierarchies.
+Token-efficient ADB wrapper for LLMs to inspect and manage Android devices.
