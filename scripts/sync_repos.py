@@ -17,10 +17,12 @@ IGNORED_REPOS = {"codefl0w", "codefl0w.github.io"}
 
 
 def fetch_github_repos():
-    req = urllib.request.Request(
-        GITHUB_API,
-        headers={"User-Agent": "codefl0w-site-updater", "Accept": "application/vnd.github.v3+json"},
-    )
+    headers = {"User-Agent": "codefl0w-site-updater", "Accept": "application/vnd.github.v3+json"}
+    token = os.environ.get("GITHUB_TOKEN")
+    if token:
+        headers["Authorization"] = f"Bearer {token}"
+
+    req = urllib.request.Request(GITHUB_API, headers=headers)
     with urllib.request.urlopen(req, timeout=15) as resp:
         return json.loads(resp.read().decode("utf-8"))
 
