@@ -3,7 +3,7 @@
   description: Python-based graphical interface for automating ADB & fastboot commands
     and workflows.
   language: Python
-  stars: 198
+  stars: 206
   category: Android Tools
   featured: true
   github: https://github.com/codefl0w/QuickADB
@@ -19,7 +19,7 @@
   slug: mtkclient-windows-installer
   description: Fully automated installer / updater for MTKClient on Windows.
   language: Python
-  stars: 133
+  stars: 136
   category: Android Tools
   featured: true
   github: https://github.com/codefl0w/mtkclient-windows-installer
@@ -34,7 +34,7 @@
   slug: unsuper
   description: The fastest Android super.img partition dumper ever, written in Python.
   language: Python
-  stars: 23
+  stars: 24
   category: Android Tools
   featured: true
   github: https://github.com/codefl0w/unsuper
@@ -49,7 +49,7 @@
   slug: minios
   description: Self-hostable web OS for feature phones.
   language: Python
-  stars: 20
+  stars: 22
   category: Web Tools
   featured: true
   github: https://github.com/codefl0w/MiniOS
@@ -65,7 +65,7 @@
   description: Token-efficient ADB (Android Debug Bridge) wrapper for LLMs to manage
     devices and test apps.
   language: Python
-  stars: 0
+  stars: 1
   category: Automation
   featured: true
   github: https://github.com/codefl0w/llm-adb
@@ -112,7 +112,7 @@
   description: Simple and powerful Python script to look for keywords and download
     files from AndroidFileHost by imitating their API calls.
   language: Python
-  stars: 13
+  stars: 14
   category: Automation
   featured: false
   github: https://github.com/codefl0w/AndroidFileHostScraper
