@@ -3,7 +3,7 @@
   description: Python-based graphical interface for automating ADB & fastboot commands
     and workflows.
   language: Python
-  stars: 206
+  stars: 211
   category: Android Tools
   featured: true
   github: https://github.com/codefl0w/QuickADB
@@ -19,7 +19,7 @@
   slug: mtkclient-windows-installer
   description: Fully automated installer / updater for MTKClient on Windows.
   language: Python
-  stars: 136
+  stars: 144
   category: Android Tools
   featured: true
   github: https://github.com/codefl0w/mtkclient-windows-installer
