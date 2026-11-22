@@ -3,7 +3,7 @@
   description: Python-based graphical interface for automating ADB & fastboot commands
     and workflows.
   language: Python
-  stars: 211
+  stars: 213
   category: Android Tools
   featured: true
   github: https://github.com/codefl0w/QuickADB
@@ -19,7 +19,7 @@
   slug: mtkclient-windows-installer
   description: Fully automated installer / updater for MTKClient on Windows.
   language: Python
-  stars: 144
+  stars: 150
   category: Android Tools
   featured: true
   github: https://github.com/codefl0w/mtkclient-windows-installer
@@ -34,7 +34,7 @@
   slug: unsuper
   description: The fastest Android super.img partition dumper ever, written in Python.
   language: Python
-  stars: 24
+  stars: 26
   category: Android Tools
   featured: true
   github: https://github.com/codefl0w/unsuper
@@ -112,7 +112,7 @@
   description: Simple and powerful Python script to look for keywords and download
     files from AndroidFileHost by imitating their API calls.
   language: Python
-  stars: 14
+  stars: 15
   category: Automation
   featured: false
   github: https://github.com/codefl0w/AndroidFileHostScraper
@@ -126,7 +126,7 @@
   slug: ares-backlight-changer
   description: Change backlight colors for Redmi K40 Gaming [ARES/ARESIN].
   language: Shell
-  stars: 3
+  stars: 4
   category: Android Tools
   featured: false
   github: https://github.com/codefl0w/Ares-Backlight-Changer
